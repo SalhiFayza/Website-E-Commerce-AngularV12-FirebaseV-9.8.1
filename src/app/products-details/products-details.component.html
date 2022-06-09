@@ -1,0 +1,79 @@
+<!-- <br>
+<br>
+<div class="container">
+    <div class="body d-md-flex align-items-center justify-content-between" *ngFor="let item of data">
+        <div class="card" style="width: 800px;height: 400px;" *ngIf="keyy===item.id">
+            <div class="row g-0" >
+              <div class="col-md-4" >
+                <img  [src]="item.image " style="height: 398px;width: 300px;">
+              </div>
+              <div class="col-md-8" >
+                <div class="card-body" style="margin-left: 30px;"><br><br>
+                  <h5 class="card-title" style="size: 20px;"> {{item.title}}</h5>
+                  <p class="card-text">{{item.description}}</p>
+                  <br><br><br><br><br><br>
+                  <div class="d-flex flex-row justify-content-between align-items-center p-5 text-white" >
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-google"></i>
+                <i class="fa fa-youtube-play"></i>
+                <i class="fa fa-dribbble"></i>
+                <i class="fa fa-linkedin"></i></div>
+                </div>
+               
+              </div>
+
+            </div>
+          </div>
+    </div>
+</div> -->
+
+<div class="container" >
+  <div *ngFor="let item of data">
+<div *ngIf="keyy===item.id">
+
+  <div class="header-container"  >
+    <img src="assets/images/R.gif" alt="" class="header-image" />
+    <div class="header">
+      
+      <h1 class="main-heading">{{item.title}}</h1>
+      <span class="tag">Drone</span>
+      <span class="tag">Army</span>
+      <div class="stats">
+        <span class="stat-module">
+          Date :<span class="stat-number"> 05-06-2022</span>
+        </span><br>
+        <span class="stat-module">
+          Time :<span class="stat-number"> 02:02 PM</span>
+        </span><br>
+        <span class="stat-module">
+          Location :<span class="stat-number"> Tunisia</span>
+        </span>
+      </div>
+    </div> 
+  </div>
+  
+
+  
+  <div class="body">
+    <img [src]="item.image " alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-4"
+    style="width: 150px; " />
+  <br><br><br>
+    <span class="body-stats">Followers <span>3.5k</span></span>
+    <span class="body-stats">Following <span>1.9k</span></span>
+    <div class="u-clearfix"></div>
+    <div class="body-info">
+      <p>
+        {{item.description}}
+      </p>
+      
+    </div>
+    <div class="body-more">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  
+  </div>
+</div>
+</div> 
+</div>

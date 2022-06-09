@@ -1,0 +1,25 @@
+
+<div class="container">
+    <h1 class="titleh1">Welcome in All Products</h1>
+    
+    <div class="body">
+
+<div class="row  row-cols-1 row-cols-md-3 g-4">
+  <div class="col "  *ngFor="let item of data">
+    <div class="card p-0">
+        <div class="card-image">
+        <img  [src]="item.image"
+alt="">
+        </div>
+        <div class="card-content d-flex flex-column align-items-center">
+            <h4 class="pt-2">{{item.title}}</h4>
+            <h5>{{item.description}}</h5>
+            <a class="btn " (click)="detalis(item.id)">Details Product</a>
+            
+</div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+

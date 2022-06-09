@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="body d-md-flex align-items-center justify-content-between">
+        <div class="box-1 mt-md-0 mt-5">
+            <img src="assets/images/1.jpg"
+                class="" alt="">
+        </div>
+        <div class=" box-2 d-flex flex-column h-100">
+            <div class="mt-5">
+        <p class="mb-1 h-1">Create Account.</p>
+            <p class="text-muted mb-2">Share your thouhts with the world form today.</p><br>
+            <div class="d-flex flex-column ">
+                
+                <form class=" form" [formGroup]="signUpMyForm" (ngSubmit)="submit()">
+                    <div class="col-auto "  style="margin-left: 20px;">
+                        <input class="input" type="text"   placeholder="Name" formControlName="name" >
+                        <div class="alert alert-danger" *ngIf="signUpMyForm.get('name')?.touched && name?.errors?.['required']" >
+                            Name is required
+                        </div>
+                    </div><br>
+                    <div class="col-auto "  style="margin-left: 20px;">
+                        
+                        <input class="input" type="email"   placeholder="Email address" formControlName="email" >
+                        <div class="alert alert-danger" *ngIf="signUpMyForm.get('email')?.touched && email?.errors?.['required']" >
+                            Email address is required 
+                        </div>
+                        <div class="alert alert-danger" *ngIf="email?.errors?.['email']" >
+                            Please enter a valid email address
+                        </div>
+                    </div><br>
+                <div class="col-auto"  style="margin-left: 20px;">
+                    
+                        <input class="input" type="password" placeholder="Password"  formControlName="password" >
+                        <div class="alert alert-danger" *ngIf="signUpMyForm.get('password')?.touched && password?.errors?.['required']" >
+                            Password is required
+                        </div>
+                        <div class="alert alert-danger" *ngIf="password?.errors?.['password']" >
+                            Please enter a valid email address
+                        </div>
+                    </div><br>
+                    <div class="col-auto" style="margin-left: 20px;">
+                        
+                        <input class="input" type="password" placeholder="ConfirmePassword" formControlName="confirmPassword" >
+                        <div class="alert alert-danger" *ngIf="signUpMyForm.get('confirmPassword')?.touched && confirmPassword?.errors?.['required'] " >
+                            Confirm Password is required
+                        </div>
+                        <div class="alert alert-danger" *ngIf=" signUpMyForm.errors?.['passwordsDontMatch']" >
+                            Passwords should match
+                        </div>
+                        </div><br>
+                    
+                    <div class="col-auto">
+                    <button type="submit" class="btn btn-primary me-4" >Sing Up</button>
+                    
+                        <button type="submit" class="btn btn-primary ">Confirm</button>
+                    </div>
+                </form>
+                
+            </div>
+            <span class="fas fa-times"></span>
+        </div>
+        <div class="mt-auto">
+            <p class="footer text-muted mb-0 mt-md-0 mt-4">By register you agree with our
+                <span class="p-color me-1">terms and conditions</span>and
+                <span class="p-color ms-1">privacy policy</span>
+            </p>
+        </div>
+    </div>
+    
+</div>
+</div>

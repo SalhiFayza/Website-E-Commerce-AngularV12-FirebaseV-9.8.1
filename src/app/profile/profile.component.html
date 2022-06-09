@@ -1,0 +1,98 @@
+
+
+
+
+
+
+<div *ngIf="user$ | async as user">
+
+<section class="h-100 gradient-custom-2" >
+  <div class="container py-5 h-100"style="margin-left: 10px;">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-7">
+        <div class="card" style="width: 800px;height:450px;">
+          <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+              <img  [src]="user.image " 
+                alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                style="width: 150px; z-index: 1">
+              <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
+                style="z-index: 1;"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Edit profile
+              </button>
+            </div>
+            <div class="ms-3" style="margin-top: 130px;">
+              <h5>{{user.displayName}}</h5>
+              <p>Tunisia</p>
+            </div>
+          </div>
+          <div class="p-4 text-black" style="background-color: #f8f9fa;">
+            <div class="d-flex justify-content-end text-center py-1">
+              <div>
+                <p class="mb-1 h5">253</p>
+                <p class="small text-muted mb-0">Photos</p>
+              </div>
+              <div class="px-3">
+                <p class="mb-1 h5">1026</p>
+                <p class="small text-muted mb-0">Followers</p>
+              </div>
+              <div>
+                <p class="mb-1 h5">478</p>
+                <p class="small text-muted mb-0">Following</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-4 text-black">
+            <div class="mb-5">
+              <p class="lead fw-normal mb-1">Bio</p>
+              <div class="p-4" style="background-color: #f9f8fa;">
+                <p class="font-italic mb-1">{{user.bio}}</p>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- Modal Update   -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="title modal-title" id="exampleModalLabel">Update Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        
+          <div class="row row-cols-1 row-cols-md-0 ">
+        <form  class=" form" >
+            <div>
+          <input type="text" class="form-control"   placeholder="Name Profile" name="displayName"  [(ngModel)]="data.displayName" required ngModel #displayName="ngModel" ><br>
+          <div class="alert alert-danger" *ngIf="displayName?.touched && displayName?.errors?.['required']" >
+            Name Profile is required
+        </div></div>
+        <div>
+          <textarea type="text" class="form-control" placeholder="Bio Profile" name="bio"   required ngModel  [(ngModel)]="data.bio"  #bio="ngModel" ></textarea><br>
+          <div class="alert alert-danger" *ngIf="bio?.touched && bio?.errors?.['required']" >
+            Bio Profile is required
+        </div></div>
+        <div>   
+          <input   type="text" class="form-control" name="image" placeholder="Image Profile"  required ngModel  [(ngModel)]="data.image" #image="ngModel" />
+          <div class="alert alert-danger" *ngIf="image?.touched && image?.errors?.['required']" >
+            Image Profile is required
+          </div>
+    </div> <br>
+          <button type="button" class="g btn btn-secondary" data-bs-dismiss="modal" style="float: right;" (click)="updateData(user.uid)">Update</button>
+        </form>
+    </div></div>  
+    </div>
+  </div>
+</div> </section>
+</div>
+

@@ -1,0 +1,89 @@
+<br>
+<div class="container" >
+    <h1 class="titel">Welcome in your Products</h1>
+    <div class="body">
+      <button type="submit" class="f btn"  style="float: right;" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+      Add New Products
+      </button>
+        <br><br>
+            <div class="row  row-cols-1 row-cols-md-3 g-4" >
+              <div class="col" *ngFor="let item of data">
+            
+                    <div class="card h-100 text-center" style="width: 285px;height:150px" *ngIf="uid===item.uid">               
+                      <img [src]="item.image" class="card-img-top">
+                        <div class="card-body">
+                          <h5 class="card-title">{{item.title}}</h5>
+                            <p class="card-text">{{item.description}}</p>
+                              <div class="btn-group">
+                                <a class="upb btn  btn-outline " data-bs-toggle="modal" data-bs-target="#exampleModalUpdate" >Update</a>
+                                <a  class="delb btn  btn-outline" (click)="deleteData(item.id)">Delete</a>
+                              </div>
+                            </div>               
+<!-- ********** Modal Update Products*********** -->
+<div class="modal fade" id="exampleModalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update Products</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" >
+      <form ><br>
+          <div>
+                <input type="text" class="form-control" placeholder="Title Products"  name="title" [(ngModel)]="data.title" required ngModel #title="ngModel"><br>
+                <div class="alert alert-danger" *ngIf="title?.touched && title?.errors?.['required']" >
+                  Title Products is required
+                </div>
+          </div><br>
+          <div>
+                <textarea type="text" class="form-control" placeholder="Description Products" name="description"  [(ngModel)]="data.description" required ngModel #description="ngModel"></textarea><br>
+                <div class="alert alert-danger" *ngIf="description?.touched && description?.errors?.['required']" >
+                  Description Products is required
+                </div>
+          </div> <br>
+          <div>   
+                <input   type="text" class="form-control" name="image" placeholder="Image Products" [(ngModel)]="data.image" required ngModel #image="ngModel"/>
+                <div class="alert alert-danger" *ngIf="image?.touched && image?.errors?.['required']" >
+                  Image Products is required
+                </div>
+          </div>   <br>    
+                <button type="button" class="btn btn-outline" data-bs-dismiss="modal" style="float: right;"  (click)="updateData(item.id)">Save</button>
+
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>        
+<br><br>
+</div>
+</div>           
+    </div>
+<!-- ***********Modal Add Products ********** -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Products</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form   #productsMyForm="ngForm" (ngSubmit)="addProduct(productsMyForm.value)"><br>
+          <div class="main">
+            <div class="input-fields ">
+              <input name="title" ngModel placeholder="Title" id="Title" type="text" class="input-field form-control" />
+            </div><br>
+            <div class="input-fields ">
+              <textarea name="description" ngModel placeholder="Description" id="Description" type="text" class="input-field form-control"></textarea>
+            </div><br>
+            <div class="input-fields">
+              <input name="image" ngModel placeholder="Image" id="Image" type="text" class="input-field form-control" />
+            </div><br>
+            <button type="submit" class="btn btn-outline" data-bs-dismiss="modal" style="float: right;">Add Data </button>
+          </div>
+        </form>
+    </div> 
+</div>
+</div>
+</div>
+</div>

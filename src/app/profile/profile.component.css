@@ -1,0 +1,22 @@
+.rounded-top {
+    background: #fbc2eb;
+    background: -webkit-linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1));
+    background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1))
+    }
+
+
+.title{
+    color: rgb(134, 38, 143);
+	font-style: italic;
+    font-family: ui-monospace;
+}
+.card-title{
+    color: rgb(134, 38, 143);
+    font-size: 25px;
+	font-style: italic;
+    font-family: ui-monospace;
+}
+.card-text{
+	font-style: italic;
+    font-family: ui-monospace;
+}
