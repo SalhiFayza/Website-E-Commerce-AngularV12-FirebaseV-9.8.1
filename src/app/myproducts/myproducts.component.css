@@ -1,0 +1,50 @@
+.card-img-top{
+    height: 200px;
+   
+}
+
+.card {
+    position: relative;
+    padding: 0;
+    margin: 0 !important;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 280px;
+    max-height: 340px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+}
+.titel{
+    color: rgb(134, 38, 143);
+    text-align: center;
+    font-style: italic;
+    font-family: ui-monospace;
+}
+.btn{
+    background-color: rgb(207, 192, 221);
+    color: white;
+    font-style: italic;
+    font-family: ui-monospace;
+}
+.modal-title{
+  color: rgb(134, 38, 143);
+  font-style: italic;
+  font-family: ui-monospace;
+}
+.f{
+    background-color: rgb(206, 245, 232);
+    color: rgb(37, 107, 107);
+    box-shadow: inset 2px 2px 4px rgba(255,255,255,0.15), inset -8px -8px 4px rgb(141, 194, 194);
+    font-style: italic;
+    font-family: ui-monospace;
+}
+.card-title{
+	font-style: italic;
+    font-family: ui-monospace;
+}
+.card-text{
+	font-style: italic;
+    font-family: ui-monospace;
+}

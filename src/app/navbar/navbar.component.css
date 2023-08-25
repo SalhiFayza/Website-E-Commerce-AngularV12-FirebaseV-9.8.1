@@ -1,0 +1,11 @@
+.navbar{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(238, 207, 234);
+    font-style: italic;
+    font-family: ui-monospace;
+}
+.a{
+    color: black;
+   
+}
